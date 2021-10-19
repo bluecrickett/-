@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main(){
+    int i=0,j=0,p=0,t=0;
+    printf ("Введите количество элементов массива: "); scanf ("%d", &p);
+    int arr[p];
+    printf ("Введите элементы массива для сортировки \n");
+    for (i=0; i<p; i++){
+        printf ("%d элемент = ", i+1); scanf ("%d", &arr[i]);
+    }
+    double  k=1.247;
+    for (j=p-1; j>=1; j/=k){
+        for (i=0; i< p-j; i++){
+            if (arr[i]>arr[i+j]){
+                t = arr[i];
+                arr[i] = arr[i+j];
+                arr[i+j] = t;
+            }
+        }
+    }
+    printf ("Отсортированный в порядке возрастания массив с использованием параметрического цикла: \n");
+    for (i=0; i<p; i++){
+        printf("%d", arr[i]); printf(" ");
+    }
+}
+
