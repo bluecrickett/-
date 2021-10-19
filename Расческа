@@ -24,3 +24,32 @@ int main(){
     }
 }
 
+#include <stdio.h>
+
+int main(){
+    int i=0,p=0,t=0;
+    printf ("Введите количество элементов массива: "); scanf ("%d", &p); 
+    int arr[p];
+    printf ("Введите элементы массива для сортировки \n");
+    for (i=0; i<p; i++){
+        printf ("%d элемент = ", i+1); scanf ("%d", &arr[i]);
+    }
+    double k = 1.247;
+    int j = p - 1;
+    while (j >= 1) {
+          i = 0;
+          while (i < p - j) {
+              if (arr[i] < arr[i + j]) {
+                  t = arr[i];
+                  arr[i] = arr[i + j];
+                  arr[i + j] = t;
+              }
+              i++;
+         }
+         j /= k;
+    }
+    printf ("Отсортированный в порядке убывания массив с использованием цикла с предусловием: \n");
+    for (i=0; i<p; i++){ 
+        printf("%d", arr[i]); printf(" "); 
+    }
+}
