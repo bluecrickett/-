@@ -1,0 +1,46 @@
+#include <stdio.h>
+
+int main(){
+    int i=0,j=0,v=0,p=0;
+    printf ("Введите количество элементов массива: "); scanf ("%d", &p);
+    int arr[p];
+    printf ("Введите элементы массива для сортировки \n");
+    for (i=0; i<p; i++){
+        printf ("%d элемент = ", i+1); scanf ("%d", &arr[i]);
+    }
+    for(i=1; i<p; i++){
+        v=arr[i];
+        j=i;
+        while (j>0 && v<arr[j-1]){
+            arr[j]=arr[j-1];
+            j--;
+        }
+        arr[j]=v;
+    }
+    printf ("Отсортированный в порядке возрастания массив с использованием цикла с предусловием: \n");
+    for (i=0; i<p; i++){
+        printf("%d", arr[i]); printf(" ");
+    }
+}
+
+#include <stdio.h>
+
+int main(){
+    int i=0,j=0,v=0,p=0;
+    printf ("Введите количество элементов массива: "); scanf ("%d", &p);
+    int arr[p];
+    printf ("Введите элементы массива для сортировки \n");
+    for (i=0; i<p; i++){
+        printf ("%d элемент = ", i+1); scanf ("%d", &arr[i]);
+    }
+    for(i=1; i<p; i++){
+        for(j=i, v = arr[i]; (j>0) && (arr[j-1]>v); j--){
+            arr[j] = arr[j-1];
+        }
+        arr[j]=v;
+    }
+    printf ("Отсортированный в порядке возрастания массив с использованием параметрического цикла: \n");
+    for (i=0; i<p; i++){
+        printf("%d", arr[i]); printf(" ");
+    }
+}
