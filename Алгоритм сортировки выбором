@@ -13,10 +13,11 @@ int main(){
             if (arr[j]<arr[m]){
                 m = j;
             }
-            v = arr[i];
-            arr[i]=arr[m];
-            arr[m]=v;
+            
         }
+        v = arr[i];
+        arr[i]=arr[m];
+        arr[m]=v;
         
     }
     printf("Отсортированный в порядке возрастания массив с использованием параметрического цикла: \n");
@@ -24,6 +25,7 @@ int main(){
         printf("%d", arr[i]); printf(" ");
     }
 }
+
 
 #include <stdio.h>
 
