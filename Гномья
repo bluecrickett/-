@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main(){
+    int i=0,j=0,v=0,p=0;
+    printf ("Введите количество элементов массива: "); scanf ("%d", &p);
+    int arr[p];
+    printf("Введите элементы массива: \n");
+    for (i=0; i<p; i++){
+        printf ("%d элемент = ", i+1); scanf ("%d", &arr[i]);
+    }
+    i = 1; j = 2;
+    while (i<p) {
+        if (arr[i-1]>arr[i]) {
+            v=arr[i];
+            arr[i]=arr[i-1];
+            arr[i-1]=v;
+            i--;
+            if (i>0){
+              continue;  
+            } 
+        }
+        i=j++;
+    }
+    printf("Отсортированный в порядке возрастания массив с использованием цикла с предусловием: \n");
+    for (i=0; i<p; i++){
+        printf("%d", arr[i]); printf(" ");
+    }
+}
