@@ -1,0 +1,37 @@
+#include <iostream>
+
+void qsort(int *arr,int b, int e){
+    if(b<e){
+        int l=b,r=e,piv=arr[(b+e)/2];
+        do {
+            while (arr[l]<piv)
+            l++;
+            while (arr[r]>piv)
+            r--;
+            if(l<=r){
+                int v = arr[l];
+                arr[l] = arr[r];
+                arr[r] = v;
+                l++;
+                r--;
+            }
+        }
+        while (l<=r);
+        qsort(arr,b,r);
+        qsort(arr,l,e);
+    }
+}
+int main(){
+    int p,i;
+    printf("Введите количество элементов массива: "); scanf("%d", &p);
+    int arr[p];
+    printf("Введите элементы массива: \n");
+    for (i=0; i<p; i++){
+        printf ("%d элемент = ", i+1); scanf("%d", &arr[i]);
+    }
+    qsort(arr,0, p-1);
+    printf("Отсортированный в порядке возрастания массив: \n");
+    for (int i = 0; i<p; i++){
+        printf("%d", arr[i]); printf(" ");
+    }
+}
